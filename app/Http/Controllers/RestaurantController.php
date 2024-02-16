@@ -76,6 +76,7 @@ class RestaurantController extends Controller
     {
         // Récupérer le restaurant par son ID
         $restaurant = Restaurant::findOrFail($id);
+        $request->validated();
         // Appeler la méthode updateRestaurant définie dans UpdateRestaurantRequest pour mettre à jour le restaurant
         $request->updateRestaurant($restaurant);
         // Retourner la vue 'restaurant.show' en passant le restaurant mis à jour comme données
